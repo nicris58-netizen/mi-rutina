@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina V-Shape - Crinstian</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; margin: 0; padding: 15px; }
+        h1, h2 { color: #00e676; text-align: center; }
+        .day-btn { width: 100%; padding: 12px; margin: 5px 0; background-color: #1f1f1f; color: #fff; border: 1px solid #333; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .day-btn:hover { background-color: #00e676; color: #121212; }
+        .exercise-card { background: #1e1e1e; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #00e676; }
+        .exercise-card h3 { margin-top: 0; font-size: 18px; }
+        .input-group { display: flex; gap: 10px; margin-top: 10px; }
+        input { width: 50%; padding: 8px; border-radius: 4px; border: 1px solid #444; background: #2a2a2a; color: #fff; font-size: 14px; }
+        button.save-btn { width: 100%; margin-top: 10px; padding: 8px; background: #00e676; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>Rutina V-Shape</h1>
+    <p style="text-align:center; color:#aaa;">Tiempo objetivo: 60 minutos</p>
+
+    <div id="day-selector">
+        <button class="day-btn" onclick="loadDay('Lunes')">Lunes: Pecho, Tríceps & Core</button>
+        <button class="day-btn" onclick="loadDay('Martes')">Martes: Espalda & Bíceps</button>
+        <button class="day-btn" onclick="loadDay('Miercoles')">Miércoles: Pierna Completa</button>
+        <button class="day-btn" onclick="loadDay('Jueves')">Jueves: Hombros, Trapecio & Cuello</button>
+        <button class="day-btn" onclick="loadDay('Viernes')">Viernes: Glúteos & Core</button>
+    </div>
+
+    <div id="workout-container" class="hidden">
+        <button onclick="backToMenu()" style="background:#333; color:#fff; border:none; padding:8px 15px; border-radius:4px; margin-bottom:15px; cursor:pointer;">← Volver al Menú</button>
+        <h2 id="current-day-title"></h2>
+        <div id="exercises-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
