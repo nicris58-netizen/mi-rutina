@@ -45,10 +45,12 @@ const routineData = {
 
 let timerInterval;
 
-function loadDay(day) {
+function loadDay(day, isSaturday = false) {
     document.getElementById('day-selector').classList.add('hidden');
+    document.getElementById('saturday-selector').classList.add('hidden');
     document.getElementById('workout-container').classList.remove('hidden');
-    document.getElementById('current-day-title').innerText = day;
+    
+    document.getElementById('current-day-title').innerText = isSaturday ? `Sábado (Recuperación de ${day})` : day;
     
     const list = document.getElementById('exercises-list');
     list.innerHTML = '';
@@ -88,13 +90,22 @@ function loadDay(day) {
         list.appendChild(card);
     });
 
-    // Añadir contenedor de temporizador flotante si no existe
     if (!document.getElementById('timer-display')) {
         const timerDiv = document.createElement('div');
         timerDiv.id = 'timer-display';
         timerDiv.style = "position:fixed; bottom:15px; right:15px; background:#00e676; color:#121212; padding:12px 20px; border-radius:30px; font-weight:bold; font-size:18px; display:none; box-shadow:0 4px 10px rgba(0,0,0,0.5); z-index:1000;";
         document.body.appendChild(timerDiv);
     }
+}
+
+function showSaturdayMenu() {
+    document.getElementById('day-selector').classList.add('hidden');
+    document.getElementById('saturday-selector').classList.remove('hidden');
+}
+
+function loadPendingDay() {
+    const selectedDay = document.getElementById('pending-day-select').value;
+    loadDay(selectedDay, true);
 }
 
 function startTimer(seconds) {
@@ -128,5 +139,6 @@ function saveProgress(day, index, totalSets) {
 
 function backToMenu() {
     document.getElementById('workout-container').classList.add('hidden');
+    document.getElementById('saturday-selector').classList.add('hidden');
     document.getElementById('day-selector').classList.remove('hidden');
 }
