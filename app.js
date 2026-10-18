@@ -1,10 +1,10 @@
 const routineData = {
     "Lunes": [
-        { name: "Press de banca inclinado con mancuernas (4x8-10)", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80", sets: 4 },
+        { name: "Press de banca inclinado con mancuernas (4x8-10)", img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80", sets: 4 },
         { name: "Press plano con barra W o mancuernas (3x10-12)", img: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80", sets: 3 },
         { name: "Aperturas con mancuernas en banca (3x12)", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80", sets: 3 },
-        { name: "Press Francés con barra W (3x10-12)", img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80", sets: 3 },
-        { name: "Tríceps copa a dos manos (3x10-12)", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80", sets: 3 },
+        { name: "Press Francés con barra W (3x10-12)", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80", sets: 3 },
+        { name: "Tríceps copa a dos manos (3x10-12)", img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80", sets: 3 },
         { name: "Elevaciones de piernas colgado en barra (3x12-15)", img: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=500&q=80", sets: 3 }
     ],
     "Martes": [
@@ -76,7 +76,7 @@ function loadDay(day, isSaturday = false) {
         card.className = 'exercise-card';
         card.innerHTML = `
             <h3>${ex.name}</h3>
-            <img src="${ex.img}" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin:8px 0;" alt="${ex.name}">
+            <img src="${ex.img}" style="width:100%; height:180px; object-fit:cover; border-radius:6px; margin:8px 0;" alt="${ex.name}">
             ${setsHTML}
             <button class="save-btn" onclick="saveProgress('${day}', ${index}, ${ex.sets})">Guardar Ejercicio</button>
             <div style="margin-top:10px; text-align:center; background:#292929; padding:8px; border-radius:6px;">
